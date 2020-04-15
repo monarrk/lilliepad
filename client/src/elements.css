@@ -1,0 +1,156 @@
+/*
+
+  lilliepad - a fancy discord client that runs in your web browser
+  Copyright (C) 2018-2020  superwhiskers <whiskerdev@protonmail.com>
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
+
+html {
+    color: rgb(var(--color-text));
+    background: rgb(var(--color-background));
+    font-family: var(--font);
+    font-size: 1em;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+    color:  rgb(var(--color-text));
+    text-align: center;
+    height: 20px;
+    border-bottom: 0.5px solid rgb(var(--color-text));
+    user-select: none;
+    appearance: none;
+
+    &:hover {
+        border-bottom: 0.5px solid rgb(var(--color-primary));
+    }
+
+    &:focus {
+        outline: none;
+        border-bottom: 0.5px solid rgb(var(--color-primary));
+    }
+} 
+
+img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;  
+}
+
+i {
+    color: rgb(var(--color-text));
+    user-select: none;  
+
+    &.button i:hover {
+        color: rgb(var(--color-primary));
+    }
+}
+
+input[type="text"] {
+    background: none;
+    border: none;
+    border-bottom: 0.5px solid rgb(var(--color-text));
+    color: rgb(var(--color-text));
+    height: 20px;
+    padding-bottom: 2px;
+
+    &:focus, &:hover {
+        border-bottom: 0.5px solid rgb(var(--color-primary));
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+  
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+
+    & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+
+        &:before {
+            color: rgb(var(--color-text));
+            content: '';
+            margin-right: 10px;
+            margin-left: 5px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 15px;
+            height: 15px;
+            background: rgba(var(--color-primary), 0);
+            border: 0.5px solid rgb(var(--color-text));
+        }
+    }
+
+    &:hover:not(:checked) + label:before {
+        background: rgba(var(--color-primary), 0.75);
+    }
+      
+    &:focus + label:before {
+        box-shadow: none;
+        outline: none;
+    }
+
+    &:checked + label:before {
+        background: rgb(var(--color-primary));
+    }
+      
+    &:disabled + label {
+        color: rgb(var(--color-border));
+        cursor: auto;
+
+        &:before {
+            box-shadow: none;
+            opacity: 0.25;
+        }
+    }
+}
+
+a {
+    color: rgb(var(--color-text));
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: 0.5px solid rgb(var(--color-text));
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    animation: rainbow 100s infinite alternate;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}

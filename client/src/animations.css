@@ -1,0 +1,92 @@
+/*
+
+  lilliepad - a fancy discord client that runs in your web browser
+  Copyright (C) 2018-2020  superwhiskers <whiskerdev@protonmail.com>
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published
+  by the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
+
+/* hides an element */
+
+@keyframes hide {
+    0% { opacity: 1; }
+    99% { opacity: 0; }
+    100% { opacity: 0; z-index: -1; }
+}
+
+.invisible {
+    animation: hide 1s forwards;
+}
+
+/* makes the text in an element cycle through the rainbow */
+
+@keyframes rainbow {
+    0% { color: #d65c97; }
+    5% { color: #5cd666; }
+    10% { color: #a55cd6; }
+    15% { color: #5c7cd6; }
+    20% { color: #d65c7a; }
+    25% { color: #81d65c; }
+    30% { color: #835cd6; }
+    35% { color: #685cd6; }
+    40% { color: #5c9dd6; }
+    45% { color: #5cd670; }
+    50% { color: #d6625c; }
+    55% { color: #d6835c; }
+    60% { color: #d6605c; }
+    65% { color: #be5cd6; }
+    70% { color: #5c8dd6; }
+    75% { color: #95d65c; }
+    80% { color: #d69d5c; }
+    85% { color: #d65c81; }
+    90% { color: #5cd666; }
+    95% { color: #d67e5c; }
+    100% { color: #64d65c; }
+}
+
+.rainbow {
+    animation: rainbow 100s infinite alternate;
+}
+
+/* makes the background color of an element cycle through a rainbow */
+
+@keyframes rainbow-bg {
+    0% { background: #d65c97; }
+    5% { background: #5cd666; }
+    10% { background: #a55cd6; }
+    15% { background: #5c7cd6; }
+    20% { background: #d65c7a; }
+    25% { background: #81d65c; }
+    30% { background: #835cd6; }
+    35% { background: #685cd6; }
+    40% { background: #5c9dd6; }
+    45% { background: #5cd670; }
+    50% { background: #d6625c; }
+    55% { background: #d6835c; }
+    60% { background: #d6605c; }
+    65% { background: #be5cd6; }
+    70% { background: #5c8dd6; }
+    75% { background: #95d65c; }
+    80% { background: #d69d5c; }
+    85% { background: #d65c81; }
+    90% { background: #5cd666; }
+    95% { background: #d67e5c; }
+    100% { background: #64d65c; }
+}
+
+.rainbow-bg {
+    animation: rainbow-bg 100s infinite alternate;
+}
+

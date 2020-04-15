@@ -18,14 +18,24 @@
 
 -->
 
-<html>
+<html lang="en">
     <head>
         <title>lillepad</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:title" content="lilliepad"/>
         <meta property="og:description" content="an open-source web discord client"/>
         <meta property="og:type" content="website"/>
+
+        {{! generate links }}
+        {{#each links}}
+        <link href="{{.}}" rel="stylesheet" type="text/css">
+        {{/each}}
     </head>
     <body>
+        {{! generate js sourcings }}
+        {{#each scripts}}
+        <script src="{{.}}" type="text/javascript"></script>
+        {{/each}}
     </body>
 </html>

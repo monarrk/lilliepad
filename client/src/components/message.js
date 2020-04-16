@@ -1,9 +1,26 @@
+// @flow
+
 import { h, html } from "sinuous";
 import fromnow from "fromnow";
 import cls from "obj-str";
 
 // import { DisplayPicture } from "./display-picture.js";
+
+// $FlowFixMe: ignore until proper inference for css files
 import "./message.css";
+
+type Author = {
+  username: string,
+  tag: string,
+  avatar: string
+}
+
+type MessageProps = {
+  content: string,
+  author: Author,
+  timestamp: number,
+  siblingMessage: boolean
+}
 
 const defaultAuthor = {
   username: "author",
@@ -15,7 +32,7 @@ export const Message = ({
   author = defaultAuthor,
   timestamp = 0,
   siblingMessage = false,
-} = {}) => {
+}: MessageProps = {}) => {
   return html`
     <article
       class=${cls({ Message: true, "message-sibling": siblingMessage })}

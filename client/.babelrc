@@ -5,7 +5,7 @@
         "@babel/plugin-proposal-optional-chaining",
         "@babel/plugin-proposal-partial-application",
         "@babel/plugin-proposal-do-expressions",
-        "babel-plugin-htm",
+        // "babel-plugin-htm",
         ["@babel/plugin-proposal-pipeline-operator", {"proposal": "smart"}],
     ]
 }

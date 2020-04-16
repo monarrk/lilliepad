@@ -21,5 +21,9 @@
 import './index.css'
 
 import { h, html } from 'sinuous'
+import { Message } from './components/message'
 
-document.body.append(html`<h1>hello, world</h1>`)
+document.body.append(html`
+  <h1>hello, world</h1>
+  <${Message} content=${"Hello World!"} />
+`)

@@ -1,0 +1,61 @@
+.Message {
+  position: relative;
+  display: grid;
+  grid-template: 
+    "aside header" auto
+    "aside body" auto /
+    50px 1fr           
+}
+
+.Message > .message-aside {
+  grid-area: aside;
+  place-self: center;
+}
+
+.Message > .message-header {
+  grid-area: header; 
+}
+
+.Message > .message-header > .row {
+  display: flex;
+}    
+
+.Message > .message-header > .row > .time {
+  margin-left: auto;
+  font-size: 0.75em;
+  opacity: 0;
+  align-self: flex-end;
+
+  transition: opacity 0.1s
+}
+
+.Message:hover > .message-header > .row > .time {
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Message > .message-header > .row > .time {
+    opacity: 0.6
+  }
+}
+
+.Message > .message-body {
+  grid-area: body;
+}
+
+.Message hr {
+  margin: 0;
+}
+
+.Message.message-sibling > .message-aside,
+.Message.message-sibling > .message-header {
+  display: none;
+}
+
+.Message:not(~ .Message.message-sibling) {
+  padding-bottom: 10px;
+}
+
+.Message.message-sibling ~ .Message:not(.message-sibling) {
+  padding-top: 10px;
+}

@@ -41,6 +41,10 @@
 
 .Message > .message-body {
   grid-area: body;
+
+  & > .content {
+    white-space: pre;
+  }
 }
 
 .Message hr {

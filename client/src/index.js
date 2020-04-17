@@ -20,12 +20,66 @@
 
 import './index.css'
 
-import { h, html } from 'sinuous'
-import { Message } from './components/message'
+import { h, html, o } from 'sinuous'
+import { MessageList } from './components/message-list'
+import { TextInput } from './components/text-input'
+
+const exampleAuthorA = {
+  username: "bree",
+  tag: "0000",
+  avatar: "http://avatar.3sd.me/16"
+};
+
+const exampleAuthorB = {
+  username: "lillie",
+  tag: "9999",
+  avatar: "http://avatar.3sd.me/100"
+};
+
+const exampleMessages = o([
+  {
+    content: "Hello!",
+    author: exampleAuthorA,
+    timestamp: Date.now() - 1000000
+  },
+  {
+    content: "ping",
+    author: exampleAuthorA,
+    timestamp: Date.now() - 1000000
+  },
+  {
+    content: "pong!",
+    author: exampleAuthorB,
+    timestamp: Date.now() - 900000
+  },
+  {
+    content: "hi",
+    author: exampleAuthorA,
+    timestamp: Date.now() - 3000
+  }
+]);
+
+exampleMessages([...exampleMessages(), ...(exampleMessages().map(m => ({...m, timestamp: Date.now()})))])
+exampleMessages([...exampleMessages(), ...(exampleMessages().map(m => ({...m, timestamp: Date.now()})))])
+exampleMessages([...exampleMessages(), ...(exampleMessages().map(m => ({...m, timestamp: Date.now()})))])
 
 document.body.append(html`
   <div class="main">
-    <h1>hello, world</h1>
-    <${Message} content=${"Hello World!"} author=${{ username: "Bree", avatar: "" }} />
+    <nav class="navigation">
+    </nav>
+    <section class="messaging">
+      <${MessageList} messages=${exampleMessages} />
+    </section>
+    <section class="text-input">
+      <div class="input-area">
+        <${TextInput} onsubmit=${e => {
+          exampleMessages(exampleMessages().concat([{
+            content: e.target.value.trim(),
+            author: exampleAuthorA,
+            timestamp: Date.now()
+          }]))
+        }} />
+      </div>
+    </section>
   </div>
-`)
+`);

@@ -18,6 +18,60 @@
 
 */
 
+@import 'normalize.css';
 @import 'variables.css';
 @import 'elements.css';
 @import 'animations.css';
+
+/* TODO: lillie pls fix; */
+
+html, body, .main {
+  height: 100%;
+  width: 100%;
+}
+
+
+.main {
+  display: grid;
+    
+  grid-template:
+    "nav msg" 1fr
+    "nav txt" auto
+    / auto 1fr;
+  
+  & > .navigation {
+    grid-area: nav;
+  }
+
+  & > .messaging {
+    grid-area: msg;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  & > .text-input {
+    grid-area: txt;
+    display: flex;
+    overflow: hidden;
+    max-height: 50vh;
+
+    .input-area {
+      padding: 0.4rem;
+      margin: 0 auto;
+      background: #222;
+    }
+
+    .TextInput {
+      min-height: 1.1rem;
+      max-height: 100%;
+      width: 50rem;
+
+      background: transparent;
+      color: var(--color-text);
+    }
+  }
+
+  .messaging, .text-input {
+    padding: 20px;
+  }
+}

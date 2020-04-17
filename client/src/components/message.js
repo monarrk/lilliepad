@@ -4,7 +4,7 @@ import { h, html } from "sinuous";
 import fromnow from "fromnow";
 import cls from "obj-str";
 
-// import { DisplayPicture } from "./display-picture.js";
+import { DisplayPicture } from "./display-picture";
 
 // $FlowFixMe: ignore until proper inference for css files
 import "./message.css";
@@ -39,6 +39,7 @@ export const Message = ({
       data-author-id=${author.username}
     >
       <div class="message-aside">
+        <${DisplayPicture} class="avatar" size="30px" src=${author.avatar} />
       </div>
       <header class="message-header">
         <div class="row">
